@@ -1,13 +1,12 @@
 [Unit]
-Description=Restartable Service
+Description=Restart Service Example
 
 [Service]
 Type=simple
-ExecStart=/bin/sleep infinity
+ExecStart=/usr/bin/false
 Restart=always
-RestartSec=5
-ExecStop=/bin/kill -TERM $MAINPID
-SuccessAction=none
+RestartSec=1
 
 [Install]
 WantedBy=default.target
+
