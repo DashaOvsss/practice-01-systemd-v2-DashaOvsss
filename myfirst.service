@@ -1,13 +1,13 @@
 [Unit]
-Description=Dependent Service
-After=myfirst.service
+Description=My First Service
+After=network.target
 
 [Service]
 Type=simple
-ExecStart=/bin/echo "Dependent started"
-ExecStop=/bin/echo "Dependent stopped"
-SuccessAction=none
+ExecStart=/usr/bin/sleep infinity
 Restart=on-failure
 
 [Install]
 WantedBy=default.target
+
+
