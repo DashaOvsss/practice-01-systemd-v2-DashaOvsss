@@ -1,11 +1,12 @@
 [Unit]
-Description=Restart Service Example
+Description=My Restart Service
+After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/false
+ExecStart=/bin/bash -c 'sleep infinity'
 Restart=always
 RestartSec=1
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
