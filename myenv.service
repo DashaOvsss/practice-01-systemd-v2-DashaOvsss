@@ -1,12 +1,10 @@
 [Unit]
-Description=Service with Environment Variable
+Description=Service with Environment variable
 
 [Service]
 Type=simple
-Environment="MYVAR=HelloWorld"
-ExecStart=/bin/bash -c 'echo $MYVAR'
-ExecStop=/bin/kill -TERM $MAINPID
-SuccessAction=none
+ExecStart=/bin/bash -c "echo $MY_VAR; sleep 10"
+Environment=MY_VAR=HelloWorld
 
 [Install]
 WantedBy=default.target
