@@ -1,5 +1,6 @@
 [Unit]
 Description=Dependent Service
+Wants=myfirst.service
 After=myfirst.service
 
 [Service]
