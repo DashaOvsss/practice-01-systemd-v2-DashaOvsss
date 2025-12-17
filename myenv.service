@@ -1,12 +1,6 @@
-[Unit]
-Description=Service with Environment variable
-
 [Service]
 Type=simple
-ExecStart=/bin/bash -c "echo $MY_VAR; sleep 10"
-Environment=MY_VAR=HelloWorld
-
-[Install]
-WantedBy=default.target
-
-
+ExecStart=/usr/bin/env bash -c 'echo $MY_ENV_VAR; sleep infinity'
+Environment=MY_ENV_VAR=HelloWorld
+ExecStop=/bin/echo "Stopping myenv.service"
+SuccessAction=none
