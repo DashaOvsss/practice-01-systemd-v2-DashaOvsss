@@ -2,8 +2,9 @@
 Description=Runs mytimer.service every minute
 
 [Timer]
-OnBootSec=1min
-OnUnitActiveSec=1min
+OnBootSec=1m
+OnUnitActiveSec=1m
+Unit=mytimer.service
 
 [Install]
 WantedBy=timers.target
