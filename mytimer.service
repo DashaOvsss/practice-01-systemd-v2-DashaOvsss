@@ -1,8 +1,7 @@
 [Unit]
-Description=Timer Service
+Description=My Timer Service
 
 [Service]
 Type=oneshot
-ExecStart=/bin/echo "Timer executed"
-ExecStop=/bin/kill -TERM $MAINPID
-SuccessAction=none
+ExecStart=/usr/bin/echo "Timer fired!"
+
