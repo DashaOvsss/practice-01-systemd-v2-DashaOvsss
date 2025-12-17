@@ -1,5 +1,13 @@
 [Unit]
+Description=Restartable Service
 
 [Service]
+Type=simple
+ExecStart=/bin/sleep infinity
+Restart=always
+RestartSec=5
+ExecStop=/bin/kill -TERM $MAINPID
+SuccessAction=none
 
 [Install]
+WantedBy=default.target
