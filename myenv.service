@@ -1,13 +1,14 @@
 [Unit]
-Description=Restartable Service
+Description=Service with Environment Variable
 
 [Service]
 Type=simple
-ExecStart=/bin/sleep infinity
-Restart=always
-RestartSec=5
+Environment="MYVAR=HelloWorld"
+ExecStart=/bin/bash -c 'echo $MYVAR'
 ExecStop=/bin/kill -TERM $MAINPID
 SuccessAction=none
 
 [Install]
 WantedBy=default.target
+
+
