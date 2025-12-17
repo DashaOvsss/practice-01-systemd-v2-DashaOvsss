@@ -1,11 +1,12 @@
 [Unit]
 Description=Dependent Service
 After=myfirst.service
-Requires=myfirst.service
 
 [Service]
 Type=simple
-ExecStart=/bin/echo "Dependent service started"
-ExecStop=/bin/echo "Dependent service stopped"
-SuccessAction=none
+ExecStart=/usr/bin/sleep infinity
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
 
