@@ -1,5 +1,14 @@
 [Unit]
+Description=Dependent Service
+After=myfirst.service
+Requires=myfirst.service
 
 [Service]
+Type=oneshot
+ExecStart=/bin/echo "Dependent service started"
+ExecStop=/bin/echo "Dependent service stopped"
+RemainAfterExit=yes
+SuccessAction=none
 
 [Install]
+WantedBy=default.target
