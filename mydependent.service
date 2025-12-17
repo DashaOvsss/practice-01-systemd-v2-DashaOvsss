@@ -4,11 +4,8 @@ After=myfirst.service
 Requires=myfirst.service
 
 [Service]
-Type=oneshot
-ExecStart=/bin/echo "Dependent service started"
-ExecStop=/bin/echo "Dependent service stopped"
-RemainAfterExit=yes
-SuccessAction=none
+Type=simple
+ExecStart=/bin/bash -c "echo Dependent service running; sleep 10"
 
 [Install]
 WantedBy=default.target
