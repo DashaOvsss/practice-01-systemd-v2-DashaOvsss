@@ -4,4 +4,3 @@ Description=My Timer Service
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/echo "Timer fired!"
-
